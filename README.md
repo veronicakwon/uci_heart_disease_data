@@ -1,14 +1,14 @@
-UCI Heart Disease Prediction
+# UCI Heart Disease Prediction
 
 A machine learning project that predicts the presence of heart disease using the UCI Heart Disease dataset, with a focus on maximizing patient safety through clinical optimization of the classification threshold.
 
 
-Problem Statement
+## Problem Statement
 
 Heart disease is one of the leading causes of death worldwide. Early and accurate detection is critical — but in a clinical screening context, missing a sick patient (false negative) is far more dangerous than a false alarm (false positive). This project builds a binary classifier optimized not just for overall accuracy, but for recall on the positive class, ensuring high-risk patients are flagged before leaving the clinic.
 
 
-Dataset
+## Dataset
 
 
 Source: UCI Heart Disease Dataset (via Kaggle)
@@ -18,7 +18,7 @@ Features: Age, sex, chest pain type, resting blood pressure, cholesterol, fastin
 
 
 
-Approach
+## Approach
 
 Preprocessing
 
@@ -30,7 +30,7 @@ Target encoding: Severity levels 1–4 collapsed into a single positive class (1
 One-hot encoding applied to thal and sex
 
 
-Modeling
+## Modeling
 
 
 Algorithm: Random Forest Classifier (n_estimators=100, class_weight='balanced')
@@ -43,14 +43,14 @@ Threshold Tuning
 The default 0.50 classification threshold yielded a Class 1 recall of only 0.78 — meaning 22% of sick patients would be missed. To address this, the threshold was manually lowered to 0.35, accepting a slightly higher false alarm rate in exchange for catching more true positives.
 
 
-Results
+## Results
 
 MetricDefault Threshold (0.50)Tuned Threshold (0.35)Overall Accuracy~79%79.35%Class 1 Recall0.780.89Class 1 Precision—0.78
 
 By tuning the threshold, the model now correctly identifies 89% of all actual heart disease cases, while maintaining strong overall accuracy. In a healthcare triage pipeline, this model functions as a reliable defensive screen that flags high-risk patients for further evaluation.
 
 
-Key Findings
+## Key Findings
 
 
 Maximum heart rate (thalch) and number of major vessels (ca) were the strongest predictors of heart disease
@@ -59,9 +59,9 @@ class_weight='balanced' in the Random Forest was essential given the slight clas
 
 
 
-How to Run
+## How to Run
 
-Requirements:
+### Requirements:
 
 pip install pandas numpy matplotlib seaborn scikit-learn
 
