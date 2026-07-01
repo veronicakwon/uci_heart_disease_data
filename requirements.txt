@@ -1,0 +1,13 @@
+# Install with:  pip install -r requirements.txt
+# Versions below are the ones this project was built and tested with.
+
+pandas>=2.3.3
+numpy>=2.3.5
+scikit-learn>=1.4        # 1.4+ required for HistGradientBoosting categorical_features='from_dtype'
+shap>=0.52.0
+streamlit>=1.51.0
+joblib>=1.5.2
+
+# Used by the analysis notebook (plots)
+matplotlib>=3.10.6
+seaborn>=0.13.2
